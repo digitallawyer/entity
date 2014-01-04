@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Entity::Application.config.secret_key_base = 'e8b3f29b7eaf3bce4375ec726ac527df161658a4709872027b3f023a65232f8ce8baf725780e68d7f564078095402a342b7040d974f9e5ef3bab811882ef9a39'
+Entity::Application.config.secret_key_base = 'b9475553365958dc4729634407f8ac83760dd019bbf2da1d98abc10b1ab391cc2eacb4d33cda7e2b5faef70571d19cef9f059e236da334f7ccc527717a235c74'
