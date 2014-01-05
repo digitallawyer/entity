@@ -15,6 +15,7 @@ class CorporationsController < ApplicationController
   # GET /corporations/new
   def new
     @corporation = Corporation.new
+    @corporation.build_registered_agent
   end
 
   # GET /corporations/1/edit
@@ -69,6 +70,6 @@ class CorporationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def corporation_params
-      params.require(:corporation).permit(:name, :extension, :share_number, :share_value)
+      params.require(:corporation).permit(:id, :name, :extension, :share_number, :share_value, registered_agent_attributes: [:id, :name, :address_line_1, :address_line_2, :city, :state, :postal_code, :country] )
     end
 end

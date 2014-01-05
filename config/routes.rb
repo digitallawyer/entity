@@ -1,4 +1,6 @@
 Entity::Application.routes.draw do
+  resources :registered_agents
+
   resources :corporations
 
   root :to => "home#index"
