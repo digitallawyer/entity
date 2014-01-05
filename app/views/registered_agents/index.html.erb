@@ -1,0 +1,39 @@
+<h1>Listing registered_agents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address line 1</th>
+      <th>Address line 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal code</th>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registered_agents.each do |registered_agent| %>
+      <tr>
+        <td><%= registered_agent.name %></td>
+        <td><%= registered_agent.address_line_1 %></td>
+        <td><%= registered_agent.address_line_2 %></td>
+        <td><%= registered_agent.city %></td>
+        <td><%= registered_agent.state %></td>
+        <td><%= registered_agent.postal_code %></td>
+        <td><%= registered_agent.country %></td>
+        <td><%= link_to 'Show', registered_agent %></td>
+        <td><%= link_to 'Edit', edit_registered_agent_path(registered_agent) %></td>
+        <td><%= link_to 'Destroy', registered_agent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Registered agent', new_registered_agent_path %>

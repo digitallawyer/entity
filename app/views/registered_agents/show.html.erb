@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @registered_agent.name %>
+</p>
+
+<p>
+  <strong>Address line 1:</strong>
+  <%= @registered_agent.address_line_1 %>
+</p>
+
+<p>
+  <strong>Address line 2:</strong>
+  <%= @registered_agent.address_line_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @registered_agent.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @registered_agent.state %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @registered_agent.postal_code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @registered_agent.country %>
+</p>
+
+<%= link_to 'Edit', edit_registered_agent_path(@registered_agent) %> |
+<%= link_to 'Back', registered_agents_path %>
