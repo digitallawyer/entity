@@ -1,0 +1,39 @@
+<h1>Listing incorporators</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address line 1</th>
+      <th>Address line 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal code</th>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incorporators.each do |incorporator| %>
+      <tr>
+        <td><%= incorporator.name %></td>
+        <td><%= incorporator.address_line_1 %></td>
+        <td><%= incorporator.address_line_2 %></td>
+        <td><%= incorporator.city %></td>
+        <td><%= incorporator.state %></td>
+        <td><%= incorporator.postal_code %></td>
+        <td><%= incorporator.country %></td>
+        <td><%= link_to 'Show', incorporator %></td>
+        <td><%= link_to 'Edit', edit_incorporator_path(incorporator) %></td>
+        <td><%= link_to 'Destroy', incorporator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Incorporator', new_incorporator_path %>

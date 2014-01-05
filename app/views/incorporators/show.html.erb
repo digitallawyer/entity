@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @incorporator.name %>
+</p>
+
+<p>
+  <strong>Address line 1:</strong>
+  <%= @incorporator.address_line_1 %>
+</p>
+
+<p>
+  <strong>Address line 2:</strong>
+  <%= @incorporator.address_line_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @incorporator.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @incorporator.state %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @incorporator.postal_code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @incorporator.country %>
+</p>
+
+<%= link_to 'Edit', edit_incorporator_path(@incorporator) %> |
+<%= link_to 'Back', incorporators_path %>
