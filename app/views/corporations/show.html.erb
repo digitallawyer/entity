@@ -1,12 +1,16 @@
+<div class="bs-callout bs-callout-info">
+      <h4>Documents Succesfully Generated</h4>
+      <p>Your certificate of incorporation has been created and sent to email@domain.com. Several additional steps are required in order to complete the incorporation of <%= @corporation.name %>&nbsp;<%= @corporation.extension %> You can perform these tasks yourself, at your own risk. At the same time, we also invite you to look at our convenient filing and lawyer review options.</p>
+</div>
+
 <div class="row">
 	<div class="col-lg-9">
 		
 		<h2><%= @corporation.name %>&nbsp;<%= @corporation.extension %></h2>
+    <span class="badge">Pending Filing</span></p>
 
-<div class="bs-callout bs-callout-danger">
-      <h4>Action required</h4>
-      <p>In order to complete the incorporation of <%= @corporation.name %>&nbsp;<%= @corporation.extension %>, several additional steps need to be completed. You are performing these completely at your own risk. Click here if if you would like assistance from an attorney in completing these steps.</p>
-    </div>
+</br>
+
 
 		<div class="panel-group" id="accordion">
   <div class="panel panel-primary">
