@@ -1,0 +1,65 @@
+<%= form_for(@corporation) do |f| %>
+  	<% if @corporation.errors.any? %>
+		<div id="error_explanation">
+	  		<h2><%= pluralize(@corporation.errors.count, "error") %> prohibited this corporation from being saved:</h2>
+			<ul>
+	  			<% @corporation.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+	  			<% end %>
+	  		</ul>
+		</div>
+  	<% end %>
+
+  	<form role="form">
+  		
+  		<p>Answer these questions to generate the paperwork that will allow you to create a new corporation. Click the help icon next to each title if you need some guidance.</p>
+  		
+  		</br>
+
+  		<h4>1. Corporation Name</h4>
+  		</br>
+		<div class="form-group">
+		  	<div class="row">
+		  		<div class="col-lg-3">
+					<%= f.text_field :name, :class => 'form-control input-lg', :placeholder => "Enter a name" %>
+					<p class="help-block">What is the name of the company?</p>
+				</div>
+			
+				<div class="col-lg-2 ">
+					<%= f.select :extension, options_for_select(["Inc.", "Co.", "Corp.", "Ltd.","association", "company", "corporation", "club", "foundation", "fund", "incorporated", "institute", "society", "union", "syndicate", "limited"]), {},  :class => 'form-control input-lg' %>
+					<p class="help-block">Choose an extension.</p>
+				</div>
+		
+			</div>
+		</div>
+		
+
+		<h4>2. Share preferences</h4>
+		</br>
+	
+		<div class="form-group">
+		
+			<div class="row">
+		
+				<div class="col-lg-3">
+					<%= f.text_field :share_number, :class => 'form-control input-lg', :value => "10,000,000" %>
+					<p class="help-block">Set the number of authorized shares.</p>
+				</div>
+			
+				<div class="col-lg-2">
+					<div class="input-group">
+						<span class="input-group-addon">$</span>
+
+						<%= f.text_field :share_value, :class => 'form-control input-lg', :value => "0.00001" %>
+		  			</div>
+		  			<p class="help-block">Set the share value.</p>
+		  		</div>
+	  		</div>
+		</div>
+		<h4>3. Incorporator info</h4>
+		</br>
+
+		<div class="form-group">
+			<%= f.submit 'Generate Documents', :class => 'btn btn-lg btn-primary' %>
+		</div>
+<% end %>

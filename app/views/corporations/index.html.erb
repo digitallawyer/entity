@@ -1,0 +1,33 @@
+<h1>Listing corporations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Extension</th>
+      <th>Share number</th>
+      <th>Share value</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @corporations.each do |corporation| %>
+      <tr>
+        <td><%= corporation.name %></td>
+        <td><%= corporation.extension %></td>
+        <td><%= corporation.share_number %></td>
+        <td><%= corporation.share_value %></td>
+        <td><%= link_to 'Show', corporation %></td>
+        <td><%= link_to 'Edit', edit_corporation_path(corporation) %></td>
+        <td><%= link_to 'Destroy', corporation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corporation', new_corporation_path %>
