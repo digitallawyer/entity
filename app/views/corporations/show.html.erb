@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <h1><%= @corporation.name %>&nbsp;<%= @corporation.extension %></h1>
 
 
@@ -11,6 +10,7 @@
   <strong>Share value:</strong>
   <%= @corporation.share_value %>
 </p>
+<p><%= @corporation.incorporator.name %></p>
 
 <p><%= @corporation.registered_agent.name %></p>
 

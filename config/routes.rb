@@ -1,4 +1,6 @@
 Entity::Application.routes.draw do
+  resources :incorporators
+
   resources :registered_agents
 
   resources :corporations

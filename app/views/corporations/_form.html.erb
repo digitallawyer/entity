@@ -33,7 +33,6 @@
 		
 			</div>
 		</div>
-		
 
 		<h4>2. Share preferences <a data-toggle="modal" data-target="#shareModal">
   <span class="glyphicon glyphicon-info-sign"></span> </a></h4>
@@ -58,48 +57,76 @@
 		  		</div>
 	  		</div>
 		</div>
-		<h4>3. Incorporator info <a data-toggle="modal" data-target="#incorporatorModal">
-  <span class="glyphicon glyphicon-info-sign"></span> </a></h4>
+		
+		<h4>3. Incorporator info <a data-toggle="modal" data-target="#incorporatorModal"><span class="glyphicon glyphicon-info-sign"></span> </a></h4>
 		</br>
-		<%= f.fields_for :registered_agent do |fa| %>
-
-				<div class="row">
-					<div class="col-lg-4">
+		<%= f.fields_for :incorporator do |fa| %>
+			<div class="row">
+				<div class="col-lg-4">
 					<p class="help-block">Who is incorporating the company?</p>
-
-	  					<div class="form-group">
-	      					
-	      					<%=fa.text_field :name,  :class => 'form-control input-lg', :placeholder => "Full Name" %>
-	      				</div>
-	      				<div class="form-group">
-							<%=fa.text_field :address_line_1,  :class => 'form-control input-lg', :placeholder => "Address Line 1" %>
-						</div>
+  					<div class="form-group">
+      					<%=fa.text_field :name,  :class => 'form-control input-lg', :placeholder => "Full Name" %>
+      				</div>
+      				<div class="form-group">
+						<%=fa.text_field :address_line_1,  :class => 'form-control input-lg', :placeholder => "Address Line 1" %>
+					</div>
 					<div class="form-group">
-					<%=fa.text_field :address_line_2,  :class => 'form-control input-lg', :placeholder => "Address Line 2 (Optional)" %>
-				</div>
+						<%=fa.text_field :address_line_2,  :class => 'form-control input-lg', :placeholder => "Address Line 2 (Optional)" %>
+					</div>
 					<div class="form-group">
-					<%=fa.text_field :city,  :class => 'form-control input-lg', :placeholder => "City" %>
-				</div>
+						<%=fa.text_field :city,  :class => 'form-control input-lg', :placeholder => "City" %>
+					</div>
 					<div class="form-group">
-					<%=fa.text_field :state,  :class => 'form-control input-lg', :placeholder => "State" %>
-				</div>
+						<%=fa.text_field :state,  :class => 'form-control input-lg', :placeholder => "State" %>
+					</div>
 					<div class="form-group">
-					<%=fa.text_field :postal_code,  :class => 'form-control input-lg', :placeholder => "Zip" %>
-				</div>
+						<%=fa.text_field :postal_code,  :class => 'form-control input-lg', :placeholder => "Zip" %>
+					</div>
 					<div class="form-group">
-					<%=fa.text_field :country,  :class => 'form-control input-lg', :placeholder => "Country" %>
+						<%=fa.text_field :country,  :class => 'form-control input-lg', :placeholder => "Country" %>
+					</div>
 				</div>
- 			<% end %>
-</div>
-</div>
-
-
-
+			</div>
+		<% end %>
 		</br>
 
-		<div class="form-group">
-			<%= f.submit 'Generate Documents', :class => 'btn btn-lg btn-primary' %>
-		</div>
+	<div style="display:none">
+		<h4>4. Registered agent info <a data-toggle="modal" data-target="#registeredAgentModal"><span class="glyphicon glyphicon-info-sign"></span> </a></h4>
+		</br>
+		<%= f.fields_for :registered_agent do |fb| %>
+			<div class="row">
+				<div class="col-lg-4">
+					<p class="help-block">Who is the registered agent for the company?</p>
+  					<div class="form-group">
+      					<%=fb.text_field :name,  :class => 'form-control input-lg', :value => "A Registered Agent, Inc." %>
+      				</div>
+      				<div class="form-group">
+						<%=fb.text_field :address_line_1,  :class => 'form-control input-lg', :value => "1521 Concord Pike" %>
+					</div>
+					<div class="form-group">
+						<%=fb.text_field :address_line_2,  :class => 'form-control input-lg', :value => " STE 303" %>
+					</div>
+					<div class="form-group">
+						<%=fb.text_field :city,  :class => 'form-control input-lg', :value => "Wilmington" %>
+					</div>
+					<div class="form-group">
+						<%=fb.text_field :state,  :class => 'form-control input-lg', :value => "Delaware" %>
+					</div>
+					<div class="form-group">
+						<%=fb.text_field :postal_code,  :class => 'form-control input-lg', :value => "19803" %>
+					</div>
+					<div class="form-group">
+						<%=fb.text_field :country,  :class => 'form-control input-lg', :value => "United States" %>
+					</div>
+				</div>
+			</div>
+		<% end %>		
+		</br>
+	</div>
+
+	<div class="form-group">
+		<%= f.submit 'Generate Documents', :class => 'btn btn-lg btn-primary' %>
+	</div>
 
 <% end %>
 
@@ -163,6 +190,24 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">About the incorporator</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="registeredAgentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">About the Registered Agent</h4>
       </div>
       <div class="modal-body">
         ...
