@@ -14,5 +14,7 @@
 
 <p><%= @corporation.registered_agent.name %></p>
 
+<p><%= link_to "Certificate of Incorporation (PDF)", corporation_path(@corporation, format: "pdf") %></p>
+
 <%= link_to 'Edit', edit_corporation_path(@corporation) %> |
 <%= link_to 'Back', corporations_path %>

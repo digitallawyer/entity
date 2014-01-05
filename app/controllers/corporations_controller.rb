@@ -10,6 +10,15 @@ class CorporationsController < ApplicationController
   # GET /corporations/1
   # GET /corporations/1.json
   def show
+    @corporation = Corporation.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "Hello World"
+        send_data pdf.render, filename: "Certificate of Incorporation #{@corporation.name}", type: "application/pdf", disposition: "inline"
+      end
+    end
   end
 
   # GET /corporations/new
@@ -32,6 +41,7 @@ class CorporationsController < ApplicationController
       if @corporation.save
         format.html { redirect_to @corporation, notice: 'Corporation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @corporation }
+
       else
         format.html { render action: 'new' }
         format.json { render json: @corporation.errors, status: :unprocessable_entity }
