@@ -1,14 +1,6 @@
 <p id="notice"><%= notice %></p>
+<h1><%= @corporation.name %>&nbsp;<%= @corporation.extension %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @corporation.name %>
-</p>
-
-<p>
-  <strong>Extension:</strong>
-  <%= @corporation.extension %>
-</p>
 
 <p>
   <strong>Share number:</strong>
@@ -19,6 +11,8 @@
   <strong>Share value:</strong>
   <%= @corporation.share_value %>
 </p>
+
+<p><%= @corporation.registered_agent.name %></p>
 
 <%= link_to 'Edit', edit_corporation_path(@corporation) %> |
 <%= link_to 'Back', corporations_path %>
