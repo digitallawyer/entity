@@ -39,7 +39,7 @@ class CorporationsController < ApplicationController
 
     respond_to do |format|
       if @corporation.save
-        format.html { redirect_to @corporation, notice: 'Corporation was successfully created.' }
+        format.html { redirect_to @corporation, notice: 'The Certificate of Incorporation was successfully created. Additional steps are required to complete your incorporation.' }
         format.json { render action: 'show', status: :created, location: @corporation }
 
       else
