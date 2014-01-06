@@ -75,8 +75,8 @@ Entity::Application.configure do
     config.action_mailer.smtp_settings = {
       :address   => "smtp.mandrillapp.com",
       :port      => 25,
-      :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_APIKEY"]
+      :user_name => ENV["pieter@lawgives.com"],
+      :password  => ENV["sWVVR6JsVG77svm-NQnNtQ"]
     }
 
 
