@@ -1,4 +1,5 @@
 Entity::Application.routes.draw do
+  get "guides/corporation"
   resources :incorporators
 
   resources :registered_agents
