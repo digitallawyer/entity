@@ -14,8 +14,7 @@ class CorporationsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = Prawn::Document.new
-        pdf.text "Hello World"
+        pdf = CorporationSetup.new(@corporation)
         send_data pdf.render, filename: "Certificate of Incorporation #{@corporation.name}", type: "application/pdf", disposition: "inline"
       end
     end
